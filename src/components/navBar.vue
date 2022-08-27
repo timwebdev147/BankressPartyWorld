@@ -4,9 +4,10 @@
     <nav v-bind:class="{sticky: scrollPosition > 10}">
         <img :src="require(`@/assets/${logo}`)" >
         <ul>
-            <a href=""  v-for="menu in menus" :key="menu.id">
-            <li> {{menu.menu}} </li>
-            </a>
+            
+            <li v-for="menu in menus" :key="menu.id"> 
+                <router-link :to="menu.path" exact>{{menu.menu}} </router-link>
+            </li>
         </ul>
         <button @click="showSideBar()">
             <i class="fa fa-bars"></i>
@@ -18,10 +19,9 @@
         <div id="sidebar-2">
             <button @click="hideSideBar()"><i class="fa fa-times"></i></button>
             <ul>
-                <li><a href=""> {{menu1}} </a></li>
-                <li> <a href=""> {{menu2}} </a> </li>
-                <li> <a href=""> {{menu3}} </a> </li>
-                <li> <a href=""> {{menu4}} </a> </li>
+                <li v-for="menu in menus" :key="menu.id"> 
+                <router-link @click="hideSideBar()" :to="menu.path" exact>{{menu.menu}} </router-link>
+            </li>
 
             </ul>
         </div>
@@ -30,37 +30,38 @@
 </template>
 
 <script>
+
 export default {
     name: "navBar",
     props: {
         logo: {
             type: String,
         },
-        menu1: {
+        customMenu: {
             type: String,
             default: 'Services',
         },
-        menu2: {
+        menu1: {
             type: String,
             default: 'Team',
         },
-        menu3: {
+        menu2: {
             type: String,
             default: 'Portfolio',
         },
-        menu4: {
+        menu3: {
             type: String,
             default: 'Pricing',
         },
-        menu5: {
+        menu4: {
             type: String,
             default: 'clients',
         },
-        menu6: {
+        menu5: {
             type: String,
             default: 'testimonials',
         },
-        menu7: {
+        menu6: {
             type: String,
             default: 'contact',
         }
@@ -69,32 +70,39 @@ export default {
         return {
             menus: [
                 {
-                    menu: this.menu1,
+                    menu: this.customMenu,
                     id: 1,
+                    path: '/'
+                },
+                {
+                    menu: this.menu1,
+                    id: 2,
+                    path: '/menu'
                 },
                 {
                     menu: this.menu2,
-                    id: 2,
+                    id: 3,
+                    path: '/catering'
                 },
                 {
                     menu: this.menu3,
-                    id: 3,
+                    id: 4,
+                    path: '/about'
                 },
                 {
                     menu: this.menu4,
-                    id: 4,
+                    id: 5,
+                    path: '/contact'
                 },
                 {
                     menu: this.menu5,
-                    id: 5,
+                    id: 6,
+                    path: ''
                 },
                 {
                     menu: this.menu6,
-                    id: 6,
-                },
-                {
-                    menu: this.menu7,
                     id: 7,
+                    path: ''
                 }
             ],
             active: false,
@@ -153,6 +161,7 @@ export default {
 </script>
 
 <style scoped>
+
     nav{
         width: 100%;
         height: 70px;
@@ -182,12 +191,15 @@ export default {
         z-index: 2000;
     }
     .sticky img{
-        height: 100%;
-    }
-    nav > img{
         width: 150px;
         height: 90%;
+        transition: 0.05s;
+    }
+    nav > img{
+        width: 200px;
+        height: 100%;
         padding: 0 30px;
+        transition: 0.05s;
     }
     nav > ul{
         display: flex;
@@ -198,7 +210,7 @@ export default {
         list-style-type: none;
         padding-right: 50px;
     }
-    nav > ul > a{
+    nav > ul  a{
         text-transform: uppercase;
         font-size: 15px;
         font-weight: 600;
@@ -206,8 +218,11 @@ export default {
         text-decoration: none;
         padding: 0 15px;
     }
-    nav > ul > a:hover{
+     nav a:hover,
+ nav a.router-link-active,
+ nav a.router-link-exact-active{
         color: #db4a24;
+        /* cursor: pointer; */
     }
    
     nav > button{

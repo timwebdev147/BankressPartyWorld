@@ -1,6 +1,6 @@
 <template>
 
-    <nav-bar logo="logo.jpg" menu1="home" menu2="menu" menu3="catering" menu4="about" menu5="contact" menu6="" menu7=""/>
+    
     <div class="scrollpara">
     <scroll-parallax class="parallax" :speed="0.30">
         <div class="bgImage">
@@ -24,35 +24,22 @@
             <div class="cardImage">
                 <img :src="card.image" alt="">
                 <div class="imageOverlay">
-                <a class="btn" href="">read more</a>
+                <router-link :to="card.link" class="btn" href="">read more</router-link>
             </div>
             </div>
             <h1>{{card.header}}</h1>
             <p>{{card.text}}</p>
-            <a class="readMore" href="">read more</a>
+            <router-link :to="card.link" class="readMore" href="">read more</router-link>
             </div>
         </div>
     </div>
-    <div class="section-3">
-        <div class="sectionTitle">
-            <h1>"Menus and Selections"</h1>
-            <p>Every Menu is custom created to fit your specific needs!
-                 Click each category to view a Sample Menu of Delicious
-                  Meals created by Chef Celestine.</p>
-        </div>
-        <div class="categories">
-            <div class="category" v-for="category in categories" :key="category.id">
-            <img :src="category.image" alt="">
-            <a href="">{{category.textLink}}</a>
-            </div>
-        </div>
-    </div>
+   
 </template>
 
 <script>
-import navBar from '../components/navBar.vue'
+// import navBar from '../components/navBar.vue'
 export default {
-  components: { navBar },
+//   components: { navBar },
     name: 'bankressPartyWorld',
     data() {
         return{
@@ -61,59 +48,32 @@ export default {
                     header: 'our menu',
                     text: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Delectus reprehenderitofficia fugit eligendi dolor hic excepturi nam voluptatum beatae dolores aspernatur, animi atque, assumenda eius officiis error,',
                     image: require(`@/assets/card1.jpg`),
-                    id: 1
+                    id: 1,
+                    link: '/menu'
                 },
                 {
                     header: 'Events & Private Parties',
                     text: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Delectus reprehenderitofficia fugit eligendi dolor hic excepturi nam voluptatum beatae dolores aspernatur, animi atque, assumenda eius officiis error,',
                     image: require(`@/assets/card2.jpg`),
-                    id: 2
+                    id: 2,
+                    link: ''
                 },
                 {
                     header: 'Specials & Specialties',
                     text: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Delectus reprehenderitofficia fugit eligendi dolor hic excepturi nam voluptatum beatae dolores aspernatur, animi atque, assumenda eius officiis error,',
                     image: require(`@/assets/card3.jpg`),
-                    id: 3
+                    id: 3,
+                    link: ''
                 },
                 {
                     header: 'Catering',
                     text: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Delectus reprehenderitofficia fugit eligendi dolor hic excepturi nam voluptatum beatae dolores aspernatur, animi atque, assumenda eius officiis error,',
                     image: require(`@/assets/card4.jpg`),
-                    id: 4
+                    id: 4,
+                    link: ''
                 },
             ],
-            categories:[
-                {
-                    textLink: 'Fruits Menu',
-                    image: require(`@/assets/bg2.jpg`),
-                    id: 1
-                },
-                {
-                    textLink: 'Private Dinner Menu',
-                    image: require(`@/assets/bg3.jpg`),
-                    id: 2
-                },
-                {
-                    textLink: 'Buffet Menu',
-                    image: require(`@/assets/bg4.jpg`),
-                    id: 3
-                },
-                {
-                    textLink: 'BBQ/Grills Menu',
-                    image: require(`@/assets/bg3.jpg`),
-                    id: 4
-                },
-                {
-                    textLink: 'Breakfast Menu',
-                    image: require(`@/assets/bg4.jpg`),
-                    id: 5
-                },
-                {
-                    textLink: 'Christmas Delivery Menu',
-                    image: require(`@/assets/bg2.jpg`),
-                    id: 6
-                }
-            ]
+            
         }
     }
     
@@ -158,13 +118,13 @@ export default {
 }
 .bgImage .overlay{
     position: absolute;
-    bottom: 0;
+    top: 0;
     display: flex;
     justify-content: center;
     align-items: flex-end;
     width: 100%;
     height: 40%;
-    background-image: linear-gradient(transparent, #06080aa9);
+    background-image: linear-gradient( #06080aa9, transparent );
 }
 .overlay .btn{
     position: relative;
@@ -178,7 +138,7 @@ export default {
         border-radius: 5px;
     }
 .section-2{
-    background-color: #f8f7f7;
+    background-color: #ffffff;
     width: calc(100% - 30%);
     min-height: 450px;
     padding: 50px 15%;
@@ -247,62 +207,31 @@ export default {
     justify-content: center;
     background-color: rgba(0, 0, 0, 0.4);
 }
-.section-3{
-    width: calc(100% -20%);
-    min-height: 600px;
-    display: flex;
-    padding: 40px 10%;
-}
-.section-3 .sectionTitle{
-    width: 25%;
-    height: 100%;
-}
-.sectionTitle h1{
-    text-align: left;
-    font-size: 25px;
-}
-.sectionTitle p{
-    width: 90%;
-    text-align: left;
-    font-size: small;
- }
-.section-3 .categories{
-    width: 70%;
-    height: 80%;
-    display: flex;
-    flex-wrap: wrap;
-}
-.categories .category{
-    width: 30%;
-    padding: 0 10px;
+
+</style>
+
+<style scoped>
+@media (max-width: 900px) {
+    .bgImage{
+    background-image: url('../assets/bg1.jpg');
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
-    height: 250px;
-    position: relative;
-}
-.category img{
-    /* padding: 10px 0 ; */
-    border-radius: 15px;
     width: 100%;
-    height: 70%;
-    transition: 0.3s;
-    position: relative;
-    top: -20px;
+    height: 40vh;
 }
-.category img:hover{
+.bgImage p{
+    font-size: 20px;
+    /* font-family: cursive; */
+    font-weight: bolder;
+    text-align: center;
+    text-shadow: 2px 2px 3px black;
     width: 90%;
-    height: 60%;
-    transition: 0.2s;
 }
-.category a{
-    text-decoration: none;
-    text-decoration-line: underline;
-    color: #db4a24;
-    position: absolute;
-    bottom: 20px;
-
+ 
 }
 </style>
 
@@ -331,7 +260,7 @@ export default {
     font-size: 15px;
 }
 .section-2{
-    background-color: #eae0de;
+    background-color: #fff;
     width: calc(100% - 20%);
     min-height: 500px;
     padding: 50px 10%;
@@ -361,50 +290,6 @@ export default {
     text-align: left;
     padding-top: 0;
 }
-.section-3{
-    width: calc(100% -20%);
-    min-height: 600px;
-    display: flex;
-    flex-direction: column;
-    padding: 40px 10%;
-}
-.section-3 .sectionTitle{
-    width: 100%;
-    height: 100%;
-}
-.sectionTitle h1{
-    text-align: center;
-    font-size: 25px;
-}
-.sectionTitle p{
-    width: 100%;
-    text-align: center;
-    font-size: small;
- }
- .section-3 .categories{
-    width: 100%;
-    height: 80%;
-    display: flex;
-    flex-wrap: wrap;
-}
-.categories .category{
-    width: 100%;
-    padding: 0 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    height: 250px;
-    position: relative;
-}
-.category img{
-    /* padding: 10px 0 ; */
-    border-radius: 15px;
-    width: 100%;
-    height: 70%;
-    transition: 0.3s;
-    position: relative;
-    top: -20px;
-}
+
 }
 </style>

@@ -1,5 +1,6 @@
 import { createApp } from 'vue'
 import App from './App.vue'
+// import Navbar from './components/navBar.vue'
 import router from './router'
 import ScrollParallax from 'vue3-parallax/src/components/ScrollParallax.vue';
 import { library, dom } from '@fortawesome/fontawesome-svg-core';
@@ -10,8 +11,10 @@ import { fab } from '@fortawesome/free-brands-svg-icons';
 
 library.add(fas, fab, far);
 dom.watch();
+// const nav = createApp(Navbar);
 const app = createApp(App);
 app.component('scroll-parallax', ScrollParallax);
 
 app.component('font-awesome=icon', FontAwesomeIcon)
 app.use(router).mount('#app')
+// nav.use(router)
