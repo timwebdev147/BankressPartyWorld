@@ -22,7 +22,7 @@
             <div class="navigator">
                 <h1>Navigate</h1>
                 <div>
-                    <router-link :to="list.link" v-for="list in navigatorList" :key="list.id"  >{{list.text}}</router-link>
+                    <router-link  :to="list.link" v-for="list in navigatorList" :key="list.id"  >{{list.text}}</router-link>
                 </div>
             </div>
             <div class="contact">
