@@ -1,4 +1,11 @@
 <template>
+    <div class="top-panel-title">
+        <h1>Menu</h1>
+        <span>
+            <router-link to="/">Home</router-link> > Menu
+        </span>
+
+    </div>
  <div class="section-3">
         <div class="sectionTitle">
             <h1>"Menus and Selections"</h1>
@@ -147,6 +154,7 @@ export default {
     display: flex;
     flex-direction: column;
     padding: 40px 10%;
+    padding-top: 0px;
 }
 .section-3 .sectionTitle{
     width: 100%;

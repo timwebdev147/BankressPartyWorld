@@ -16,8 +16,8 @@
     </div>
     
     <div class="section-2">
-        <a class="btn" href="">Book Your Wedding Reception</a>
-        <p>From relaxing family meals and romantic dinners, to private parties and catering for events and business functions, Bankress Party World in Surulere Lagos has been serving exquisite Italian cuisine since 1965. We invite you to explore our menus and services to discover the difference that over 50 years of tradition can make.
+        <router-link class="btn" to="/contact">Book Your Wedding Reception</router-link>
+        <p>From relaxing family meals and romantic dinners, to private parties and catering for events and business functions, Bankress Party World in Surulere Lagos has been delivering great quality services since <bold>2000</bold>. We invite you to explore our services and previous projects to discover the difference that over 20 years of diligence can make.
         </p>
         <div class="cardContainer">
             <div class="card" v-for="card in cards" :key="card.id" >
@@ -33,36 +33,49 @@
             </div>
         </div>
     </div>
+
+    <div class="projectSection">
+        <div style="width: 300px;">
+            <p>GALLERY</p>
+            <h1>Check our recent projects</h1>
+            <hr style="width: 100px;"/>
+        </div>
+        <ProjectGallery/>
+
+        <div class="fadeEffect">
+            <div class="layerOne"></div>
+            <div class="layerTwo"></div>
+        </div>
+        <router-link to="/catering" >
+        <button class="btn">
+            view more
+        </button>
+    </router-link>
+    </div>
    
 </template>
 
 <script>
 // import navBar from '../components/navBar.vue'
+import ProjectGallery from '../components/projectGallery.vue'
 export default {
-//   components: { navBar },
+  components: { ProjectGallery },
     name: 'bankressPartyWorld',
     data() {
         return{
             cards:[
                 {
                     header: 'our menu',
-                    text: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Delectus reprehenderitofficia fugit eligendi dolor hic excepturi nam voluptatum beatae dolores aspernatur, animi atque, assumenda eius officiis error,',
+                    text: 'Plan the perfect meals for an upcoming event',
                     image: require(`@/assets/card1.jpg`),
                     id: 1,
                     link: '/menu'
                 },
                 {
                     header: 'Events & Private Parties',
-                    text: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Delectus reprehenderitofficia fugit eligendi dolor hic excepturi nam voluptatum beatae dolores aspernatur, animi atque, assumenda eius officiis error,',
+                    text: "Our full-service special events can be easily customized to match your taste and vision. From the flavors of your cuisine to the branding of your menu items—anything is possible. Our expert coordinators, planners and servers consider every detail to make your event unforgettable.",
                     image: require(`@/assets/card2.jpg`),
                     id: 2,
-                    link: ''
-                },
-                {
-                    header: 'Specials & Specialties',
-                    text: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Delectus reprehenderitofficia fugit eligendi dolor hic excepturi nam voluptatum beatae dolores aspernatur, animi atque, assumenda eius officiis error,',
-                    image: require(`@/assets/card3.jpg`),
-                    id: 3,
                     link: ''
                 },
                 {
@@ -70,7 +83,7 @@ export default {
                     text: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Delectus reprehenderitofficia fugit eligendi dolor hic excepturi nam voluptatum beatae dolores aspernatur, animi atque, assumenda eius officiis error,',
                     image: require(`@/assets/card4.jpg`),
                     id: 4,
-                    link: ''
+                    link: '/catering'
                 },
             ],
             
@@ -98,6 +111,7 @@ export default {
 }
 .bgImage{
     background-image: url('../assets/bg1.jpg');
+    background-color: #f8f7f7;
     background-size: 100% 100%;
     background-position: center;
     background-repeat: no-repeat;
@@ -113,7 +127,8 @@ export default {
     /* font-weight: bolder; */
     color: white;
     text-align: center;
-    text-shadow: 2px 2px 3px #2c3e50;
+    text-shadow: 2px 2px 4px grey;
+
     width: 60%;
 }
 .bgImage .overlay{
@@ -124,7 +139,7 @@ export default {
     align-items: flex-end;
     width: 100%;
     height: 40%;
-    background-image: linear-gradient( #06080aa9, transparent );
+    /* background-image: linear-gradient( #06080aa9, transparent ); */
 }
 .overlay .btn{
     position: relative;
@@ -136,12 +151,13 @@ export default {
         color: white;
         padding: 10px 20px;
         border-radius: 5px;
+        border: none;
     }
 .section-2{
     background-color: #ffffff;
-    width: calc(100% - 30%);
+    width: calc(100% - 20%);
     min-height: 450px;
-    padding: 50px 15%;
+    padding: 50px 10%;
     padding-bottom: 0;
 }
 .section-2  p{
@@ -150,7 +166,7 @@ export default {
 }
 .cardContainer{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     min-height: 1100px;
     width: 100%;
     flex-wrap: wrap;
@@ -208,6 +224,34 @@ export default {
     background-color: rgba(0, 0, 0, 0.4);
 }
 
+.projectSection{
+    display: flex;
+    position: relative;
+    padding: 0 10%;
+    flex-direction: column;
+    align-items: center;
+    
+    margin-bottom: 100px;
+}
+.projectSection > div > h1{
+    text-transform: capitalize;
+}
+.projectSection > .fadeEffect{
+    position: absolute;
+    height: 270px;
+    z-index: 20;
+    bottom: 50px;
+    width: 100%;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.01) 30%, white 70%);
+}
+/* .fadeEffect > .layerOne{
+    height: 70%;
+}
+.fadeEffect > .layerTwo{
+    height: 30%;
+    background: white;
+} */
+
 </style>
 
 <style scoped>
@@ -249,11 +293,11 @@ export default {
     height: 40vh;
 }
 .bgImage p{
-    font-size: 20px;
+    font-size: 25px;
     /* font-family: cursive; */
     font-weight: bolder;
     text-align: center;
-    text-shadow: 2px 2px 3px black;
+    text-shadow: 2px 2px 4px grey;
     width: 90%;
 }
 .overlay .btn{
@@ -266,7 +310,7 @@ export default {
     padding: 50px 10%;
 }
 .section-2 p{
-    text-align: justify;
+    text-align: left;
     font-size: 15px;
     padding: 10px 0;
 }

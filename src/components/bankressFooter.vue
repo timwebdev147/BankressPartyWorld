@@ -29,9 +29,12 @@
                 <p>Every taste. Every moment. Completely customizable, 
                     completely you. Ready to create an experience like no other?
                 </p>
-                <button>
-                    let's get started
-                </button>
+                
+                <router-link to="/contact">
+                    <button>
+                        let's get started
+                    </button>
+                </router-link>
                 <div class="icons">
                     <i class="fab fa-facebook-square"></i><i class="fab fa-instagram-square"></i><i class="fab fa-linkedin"></i>
                 </div>
@@ -64,19 +67,19 @@ export default {
         },
         siteTitle: {
             type: String,
-            default: 'Site Title'
+            default: 'Bankress Party World'
         },
         address: {
             type: String,
-            default: '44 E. West Street Ashland, OH 44805',
+            default: '40 Randle avenue, surulere, Lagos ',
         },
         phoneNumber: {
             type: String,
-            default: '0000000000'
+            default: '08033356184'
         },
         email: {
             type: String,
-            default: 'example@unknown.com'
+            default: '08081386328'
         },
         navigator1:{
             type: String,
@@ -187,7 +190,7 @@ footer{
     .navigator a:hover{
         color: #db4a24;
     }
-   .contact > button{
+   .contact > a > button{
        padding: 20px 40px;
     background-color: transparent;
     border: 2px solid #db4a24;
@@ -197,7 +200,7 @@ footer{
     text-transform: uppercase;
     cursor: pointer;
    }
-   .contact > button:hover{
+   .contact > a > button:hover{
        background-color: #db4a24;
     color: white;
    }

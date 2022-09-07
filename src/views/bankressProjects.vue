@@ -1,12 +1,12 @@
+
 <template>
     <div class="top-panel-title">
-        <h1>Catering</h1>
+        <h1>Projects</h1>
         <span>
-            <router-link to="/">Home</router-link> > Catering
+            <router-link to="/">Home</router-link> > Projects
         </span>
 
     </div>
-
     <div class="projects">
         <div class="project" v-for="project in projects" :key="project.id">
             <div class="imagesContainer">

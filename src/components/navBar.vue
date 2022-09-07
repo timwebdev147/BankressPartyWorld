@@ -183,7 +183,7 @@ export default {
         transition-duration: 0.2s;
     }
     .sticky{
-        box-shadow: 2px 2px 10px 4px grey;
+        box-shadow: 2px 0px 15px  grey;
         position: fixed;
         height: 55px;
         transition-duration: 0.2s;

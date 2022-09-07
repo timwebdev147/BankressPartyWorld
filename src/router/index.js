@@ -5,6 +5,7 @@ import bankress from '@/views/bankressPartyWorld.vue'
 import menu from '@/views/bankressMenu.vue'
 import catering from '@/views/bankressCatering.vue'
 import contact from '@/views/contactUs.vue'
+import allProjects from '@/views/bankressProjects.vue'
 
 const routes = [
     {
@@ -31,6 +32,11 @@ const routes = [
         path: "/contact",
         name: "contact",
         component: contact,
+    },
+    {
+        path: "/projects",
+        name: "projects",
+        component: allProjects,
     }
 ];
 
