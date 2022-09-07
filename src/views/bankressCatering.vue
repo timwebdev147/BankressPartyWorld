@@ -221,5 +221,9 @@ align-items: center;
 flex-direction: column;
 height: 250px;
 }
+.modal > img{
+    max-width: 90%;
+    max-height: 80%;
+    }
 }
 </style>
