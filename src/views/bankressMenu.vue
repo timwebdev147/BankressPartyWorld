@@ -29,35 +29,30 @@ export default {
         return{
             categories:[
                 {
-                    textLink: 'Fruits Menu',
+                    textLink: 'African food Menu',
                     image: require(`@/assets/bg2.jpg`),
                     id: 1
                 },
                 {
-                    textLink: 'Private Dinner Menu',
+                    textLink: 'Nigerian vegetable soup variety',
                     image: require(`@/assets/bg3.jpg`),
                     id: 2
                 },
                 {
-                    textLink: 'Buffet Menu',
+                    textLink: 'Sides',
                     image: require(`@/assets/bg4.jpg`),
                     id: 3
                 },
                 {
-                    textLink: 'BBQ/Grills Menu',
+                    textLink: 'Protein Variety Menu',
                     image: require(`@/assets/bg3.jpg`),
                     id: 4
                 },
                 {
-                    textLink: 'Breakfast Menu',
+                    textLink: 'Oriental cuisine',
                     image: require(`@/assets/bg4.jpg`),
                     id: 5
                 },
-                {
-                    textLink: 'Christmas Delivery Menu',
-                    image: require(`@/assets/bg2.jpg`),
-                    id: 6
-                }
             ]
         }
     }
