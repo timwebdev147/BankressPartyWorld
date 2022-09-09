@@ -1,7 +1,7 @@
 <template>
 <section>
-    <div  :class="{show: scrollPosition > 10, hide: scrollPosition < 10}"></div>
-    <nav v-bind:class="{sticky: scrollPosition > 10}">
+    <div  :class="{show: scrollPosition > 2, hide: scrollPosition < 2}"></div>
+    <nav v-bind:class="{sticky: scrollPosition > 2}">
         <img :src="require(`@/assets/${logo}`)" >
         <ul>
             
@@ -170,23 +170,23 @@ export default {
         justify-content: space-between;
         background-color: rgb(255, 255, 255);
         align-items: center;
-        transition-duration: 0.2s;
+        transition-duration: 0.5s;
         overflow: -moz-hidden-unscrollable;
     }
     .hide{
         display: none;
-        transition-duration: 0.2s;
+        transition-duration: 0.5s;
     }
     .show{
-        height: 50px;
+        height: 55px;
         display: block;
-        transition-duration: 0.2s;
+        transition-duration: 0.5s;
     }
     .sticky{
         box-shadow: 2px 0px 15px  grey;
         position: fixed;
         height: 55px;
-        transition-duration: 0.2s;
+        transition-duration: 0.5s;
         top: 0;
         z-index: 2000;
     }
@@ -265,21 +265,35 @@ export default {
         width: 100px;
         height: 100%;
         padding: 0 30px;
+        transition-duration: 0.5s;
+
+    }
+    .hide{
+        transition-duration: 0.5s;
+    }
+    .show{
+        height: 60px;
+        display: block;
+        transition-duration: 0.5s;
     }
     .sticky{
         position: fixed;
-        height: 70px;
+        height: 60px;
         background-color: #fff;
         box-shadow: 0px 0px 4px grey;
         margin: 0;
         top: 0;
         left: 0;
         right: 0;
-        transition-duration: 0.1s;
+        transition-duration: 0.5s;
+    }
+    .nav{
+        position: fixed;
     }
     .sticky > img{
         width: 100px;
         height: 100%;
+        transition-duration: 0.5s;
     }
     .visible{
         display: block;
@@ -318,7 +332,7 @@ export default {
         /* left: 0; */
         right: 0;
         bottom: 0;
-        z-index: 10;
+        z-index: 2001;
         overflow: hidden;
         animation-name: hideSideBar;
         animation-fill-mode: forwards;
@@ -422,6 +436,7 @@ export default {
         position: relative;
         right: inherit;
         display: flex;
+        z-index: 2001;
         flex-direction: column;
         align-items: flex-start;
         box-shadow: 2px 2px 4px grey;
@@ -446,10 +461,11 @@ export default {
         /* margin: 0; */
         color: black;
         text-decoration: none;
+        text-transform: uppercase;
         
     }
     #sidebar > div:nth-child(2) > ul > li > a:hover{
-        color: #35495e;
+        color: #db4a24;
     }
     button > .fa-xmark{
         font-size: 30px;

@@ -73,15 +73,15 @@ export default {
                 },
                 {
                     header: 'Events & Private Parties',
-                    text: "Our full-service special events can be easily customized to match your taste and vision. From the flavors of your cuisine to the branding of your menu items—anything is possible. Our expert coordinators, planners and servers consider every detail to make your event unforgettable.",
-                    image: require(`@/assets/card2.jpg`),
+                    text: "Our full-service events can be easily customized to match your taste and vision. From the flavors of your cuisine to the branding of your menu items—anything is possible. Our expert coordinators, planners and servers consider every detail to make your event unforgettable.",
+                    image: require(`@/assets/projects/bankress8.jpg`),
                     id: 2,
                     link: ''
                 },
                 {
                     header: 'Catering',
-                    text: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Delectus reprehenderitofficia fugit eligendi dolor hic excepturi nam voluptatum beatae dolores aspernatur, animi atque, assumenda eius officiis error,',
-                    image: require(`@/assets/card4.jpg`),
+                    text: 'We cater for large parties, both corprate organizations and private individuals.',
+                    image: require(`@/assets/projects/bankress11.jpg`),
                     id: 4,
                     link: '/catering'
                 },
@@ -110,10 +110,10 @@ export default {
     top: 0;
 }
 .bgImage{
-    background-image: url('../assets/bg1.jpg');
+    background-image: url('../assets/projects/bankress7.jpg');
     background-color: #f8f7f7;
-    background-size: 100% 100%;
-    background-position: center;
+    background-size: cover;
+    background-position: center ;
     background-repeat: no-repeat;
     display: flex;
     justify-content: center;
@@ -174,7 +174,7 @@ export default {
 }
 .cardContainer > .card{
     width: 45%;
-    height: 450px;
+    min-height: 450px;
     display: flex;
     flex-direction: column;
 }
@@ -257,7 +257,7 @@ export default {
 <style scoped>
 @media (max-width: 900px) {
     .bgImage{
-    background-image: url('../assets/bg1.jpg');
+    background-image: url('../assets/projects/bankress7.jpg');
     background-size: 100% 100%;
     background-position: center;
     background-repeat: no-repeat;
@@ -282,7 +282,7 @@ export default {
 <style scoped>
 @media (max-width: 600px) {
     .bgImage{
-    background-image: url('../assets/bg1.jpg');
+    background-image: url('../assets/projects/bankress7.jpg');
     background-size: 100% 100%;
     background-position: center;
     background-repeat: no-repeat;
@@ -308,6 +308,7 @@ export default {
     width: calc(100% - 20%);
     min-height: 500px;
     padding: 50px 10%;
+    padding-bottom: 0;
 }
 .section-2 p{
     text-align: left;
@@ -333,6 +334,15 @@ export default {
 .card p{
     text-align: left;
     padding-top: 0;
+}
+.projectSection{
+    display: flex;
+    position: relative;
+    padding: 0 0;
+    flex-direction: column;
+    align-items: center;
+    
+    margin-bottom: 100px;
 }
 
 }

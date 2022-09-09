@@ -52,12 +52,12 @@ data(){
                 id: 4
             },
             {
-                image: require(`@/assets/projects/bankress6.jpg`),
-                id: 6
+                image: require(`@/assets/projects/bankress5.jpg`),
+                id: 5
             },
             {
-                image: require(`@/assets/projects/bankress7.jpg`),
-                id: 7
+                image: require(`@/assets/projects/bankress6.jpg`),
+                id: 6
             },
             {
                 image: require(`@/assets/projects/bankress8.jpg`),
@@ -70,10 +70,6 @@ data(){
             {
                 image: require(`@/assets/projects/bankress10.jpg`),
                 id: 10
-            },
-            {
-                image: require(`@/assets/projects/bankress11.jpg`),
-                id: 11
             },
             {
                 image: require(`@/assets/projects/bankress12.jpg`),
@@ -94,6 +90,10 @@ data(){
             {
                 image: require(`@/assets/projects/bankress3.jpg`),
                 id: 16
+            },
+            {
+                image: require(`@/assets/projects/bankress17.jpg`),
+                id: 17
             }
         ],
     }

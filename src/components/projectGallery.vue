@@ -134,7 +134,7 @@ export default {
     padding: 15px 30px;
 }
 .modal{
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(0, 0, 0, 0.9);
     position: fixed;
     display: flex;
     justify-content: center;
@@ -167,6 +167,15 @@ export default {
 
 <style scoped>
     @media (max-width: 600px) {
+        .projects .project:nth-child(1), .projects .project:nth-child(2), .projects .project:nth-child(3){
+    width: 30%;
+    display: none;
+    margin-bottom: 2.5%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 250px;
+}
         .projects{
     width: calc( 100% - 10%);
     padding: 0 5%;

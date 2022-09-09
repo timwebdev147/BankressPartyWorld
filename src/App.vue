@@ -78,7 +78,7 @@ export default {
   border-radius: 10px;
   color: #db4a24;
 }
-@media (max-width: 600px) {
+@media (max-width: 900px) {
   #app, body{
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   }
