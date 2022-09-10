@@ -2,7 +2,7 @@
 
     
     <div class="scrollpara">
-    <scroll-parallax class="parallax" :speed="0.30">
+    <scroll-parallax class="parallax" :speed="0.40">
         <div class="bgImage">
             <p>
             Bankress Party World is known for being flexible, 
@@ -238,7 +238,7 @@ export default {
 }
 .projectSection > .fadeEffect{
     position: absolute;
-    height: 270px;
+    height: 275px;
     z-index: 20;
     bottom: 50px;
     width: 100%;

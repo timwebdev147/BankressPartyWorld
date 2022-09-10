@@ -36,7 +36,7 @@
                     </button>
                 </router-link>
                 <div class="icons">
-                    <i class="fab fa-facebook-square"></i><i class="fab fa-instagram-square"></i><i class="fab fa-linkedin"></i>
+                    <a href="https://web.facebook.com/bankresspartyworld/?_rdc=1&_rdr" target="_blank"><i class="fab fa-facebook-square"></i></a> <a href="https://instagram.com/bankresscatering?igshid=YmMyMTA2M2Y=" target="_blank"><i class="fab fa-instagram-square"></i></a><i class="fab fa-linkedin"></i>
                 </div>
             </div>
         </div>
@@ -212,6 +212,7 @@ footer{
    }
    .contact > .icons  .fa-facebook-square, .contact > .icons  .fa-instagram-square, .contact > .icons  .fa-linkedin{
     font-size: 50px;
+    color: #2c3e50;
    }
     .footer-second{
        width: calc(100% - 20%);
