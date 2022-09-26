@@ -455,10 +455,9 @@ export default {
         justify-content: space-between;
         padding: 0;
         list-style-type: none;
-        height: 15vh;
+        height: 20vh;
     }
     #sidebar > div:nth-child(2) > ul > li > a{
-        /* margin: 0; */
         color: black;
         text-decoration: none;
         text-transform: uppercase;
