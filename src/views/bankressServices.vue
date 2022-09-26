@@ -132,3 +132,28 @@ export default {
     justify-content: space-evenly;
 }
 </style>
+
+<style scoped>
+@media (max-width: 600px) {
+    .cardContainer > .card{
+    width: 100%;
+    padding-bottom: 10px;
+    min-height: 450px;
+    display: flex;
+    flex-direction: column;
+}
+.card h1{
+    text-align: left;
+    font-size: 15px;
+    font-weight: 600;
+    text-transform: uppercase;
+    padding: 0;
+    margin-top: 20px;
+    margin-bottom: -10px;
+}
+.card p{
+    text-align: left;
+    padding-top: 0;
+}
+}
+</style>

@@ -5,7 +5,7 @@
     <scroll-parallax class="parallax" :speed="0.40">
         <div class="bgImage">
             <p>
-            Bankress Party World is known for being flexible, 
+            Bankress Party World is known for being reliable, 
                 creative, and (of course) making great-tasting food for your event!
             </p>
         <div class="overlay">
