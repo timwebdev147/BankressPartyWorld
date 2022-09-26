@@ -16,9 +16,6 @@
     </div>
     
     <div class="section-2">
-        <router-link class="btn" to="/contact">Book Your Wedding Reception</router-link>
-        <p>From relaxing family meals and romantic dinners, to private parties and catering for events and business functions, Bankress Party World in Surulere Lagos has been delivering great quality services since <bold>2000</bold>. We invite you to explore our services and previous projects to discover the difference that over 20 years of diligence can make.
-        </p>
         <div class="cardContainer">
             <div class="card" v-for="card in cards" :key="card.id" >
             <div class="cardImage">
@@ -46,7 +43,7 @@
             <div class="layerOne"></div>
             <div class="layerTwo"></div>
         </div>
-        <router-link to="/catering" >
+        <router-link to="/projects" >
         <button class="btn">
             view more
         </button>
@@ -83,7 +80,7 @@ export default {
                     text: 'We cater for large parties, both corprate organizations and private individuals.',
                     image: require(`@/assets/projects/bankress11.jpg`),
                     id: 4,
-                    link: '/catering'
+                    link: '/projects'
                 },
             ],
             
@@ -172,9 +169,10 @@ export default {
     flex-wrap: wrap;
     padding-top: 50px;
 }
+
 .cardContainer > .card{
     width: 45%;
-    min-height: 450px;
+    min-height: 400px;
     display: flex;
     flex-direction: column;
 }

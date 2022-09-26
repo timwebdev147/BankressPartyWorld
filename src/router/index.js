@@ -3,7 +3,7 @@ import {createWebHistory, createRouter  } from "vue-router";
 import AboutPage from '@/views/AboutPage.vue';
 import bankress from '@/views/bankressPartyWorld.vue'
 import menu from '@/views/bankressMenu.vue'
-import catering from '@/views/bankressCatering.vue'
+import services from '@/views/bankressServices.vue'
 import contact from '@/views/contactUs.vue'
 import allProjects from '@/views/bankressProjects.vue'
 
@@ -24,9 +24,9 @@ const routes = [
         component: bankress,
     },
     {
-        path: "/catering",
-        name: "catering",
-        component: catering,
+        path: "/services",
+        name: "services",
+        component: services,
     },
     {
         path: "/contact",

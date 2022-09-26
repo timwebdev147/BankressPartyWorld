@@ -1,6 +1,6 @@
 <template>
 
-    <nav-bar :logo="logo" customMenu="home" :menu1="menu1" :menu2="menu2" :menu3="menu3" :menu4="menu4" menu5="" menu6=""/>
+    <nav-bar :logo="logo" customMenu="home" :menu1="menu1" :menu2="menu2" :menu3="menu3" :menu4="menu4" :menu5="menu5" menu6=""/>
    <router-view></router-view>
    
     <button @click="backToTop()" v-if="scrollPosition > 20"  class="scrollToTop"><i class="fa fa-arrow-up"></i></button>
@@ -19,9 +19,10 @@ export default {
         scrollPosition: '',
         logo: 'logo.jpg',
         menu1: 'menu',
-        menu2: "catering",
+        menu2: "projects",
         menu3: 'about',
-        menu4: "contact"
+        menu4: "contact",
+        menu5: "services"
       }
     },
     methods: {
@@ -54,6 +55,7 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
+  width: 100%;
   color: #2c3e50;
   margin: 0;
   /* margin-top: 60px; */

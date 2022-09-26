@@ -80,9 +80,14 @@ export default {
                     path: '/menu'
                 },
                 {
+                    menu: this.menu5,
+                    id: 6,
+                    path: '/services'
+                },
+                {
                     menu: this.menu2,
                     id: 3,
-                    path: '/catering'
+                    path: '/projects'
                 },
                 {
                     menu: this.menu3,
@@ -93,11 +98,6 @@ export default {
                     menu: this.menu4,
                     id: 5,
                     path: '/contact'
-                },
-                {
-                    menu: this.menu5,
-                    id: 6,
-                    path: ''
                 },
                 {
                     menu: this.menu6,

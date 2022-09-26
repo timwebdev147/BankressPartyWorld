@@ -60,10 +60,6 @@ data(){
                 id: 6
             },
             {
-                image: require(`@/assets/projects/bankress7.jpg`),
-                id: 7
-            },
-            {
                 image: require(`@/assets/projects/bankress8.jpg`),
                 id: 8
             },
@@ -74,10 +70,6 @@ data(){
             {
                 image: require(`@/assets/projects/bankress10.jpg`),
                 id: 10
-            },
-            {
-                image: require(`@/assets/projects/bankress11.jpg`),
-                id: 11
             },
             {
                 image: require(`@/assets/projects/bankress12.jpg`),

@@ -107,7 +107,7 @@ export default {
                 id: 1
             },
             {
-                link: '/catering',
+                link: '/projects',
                 text: this.navigator2,
                 id: 2
             },
