@@ -101,13 +101,13 @@ export default {
     text-decoration-line: underline;
     color: #db4a24;
 }
-.card > .cardImage{
+/* .card > img{
     height: 50%;
     position: relative;
-}
-.cardImage img{
+} */
+.card img{
     width: 100%;
-    height: 100%;
+    height: 50%;
     border-radius: 10px;
 }
 .imageOverlay{
@@ -154,6 +154,11 @@ export default {
 .card p{
     text-align: left;
     padding-top: 0;
+}
+.card > img{
+    width: 100%;
+    height: 50%;
+    border-radius: 10px;
 }
 }
 </style>

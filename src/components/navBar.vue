@@ -243,7 +243,7 @@ export default {
 
 
 <style scoped>
-@media (min-width: 350px) and (max-width: 750px) {
+@media (max-width: 600px) {
     nav > ul{
         display: flex;
         width: 300px;

@@ -75,6 +75,7 @@ export default {
   border: none;
   box-shadow:  2px 2px 10px grey;
   position: fixed;
+  z-index: 21;
   bottom: 30px;
   right: 30px;
   border-radius: 10px;
