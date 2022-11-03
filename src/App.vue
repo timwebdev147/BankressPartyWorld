@@ -43,7 +43,7 @@ export default {
     },
     mounted() {
       window.addEventListener('scroll', this.updateScroll);
-      
+      this.backToTop;
     }
     
 }

@@ -3,6 +3,7 @@
     <div  :class="{show: scrollPosition > 2, hide: scrollPosition < 2}"></div>
     <nav v-bind:class="{sticky: scrollPosition > 2}">
         <img :src="require(`@/assets/${logo}`)" >
+        
         <ul>
             
             <li v-for="menu in menus" :key="menu.id"> 

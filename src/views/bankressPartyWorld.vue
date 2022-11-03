@@ -1,7 +1,25 @@
 <template>
 
+    <carousel :pauseAutoplayOnHover="true" :transition="500" :autoplay="5000" :wrapAround="true" :items-to-show="1">
+        <slide v-for="slide in slides" :key="slide.id">
+            <scroll-parallax class="parallax" :speed="0.40">
+        <div :style="slide.style" class="bgImage">
+            <p>
+                {{slide.text}}
+            </p>
+        <div class="overlay">
+
+            </div>
+        </div>
+    </scroll-parallax >
+    </slide>
     
-    <div class="scrollpara">
+    <template #addons>
+        <navigation />
+        <pagination />
+    </template>
+</carousel>
+    <!-- <div class="scrollpara">
     <scroll-parallax class="parallax" :speed="0.40">
         <div class="bgImage">
             <p>
@@ -13,7 +31,7 @@
             </div>
         </div>
         </scroll-parallax >
-    </div>
+    </div> -->
     
     <div class="section-2">
         <div class="cardContainer">
@@ -54,12 +72,33 @@
 
 <script>
 // import navBar from '../components/navBar.vue'
+import 'vue3-carousel/dist/carousel.css'
+import { Carousel, Slide, Pagination, Navigation } from 'vue3-carousel'
 import ProjectGallery from '../components/projectGallery.vue'
 export default {
-  components: { ProjectGallery },
+  components: { ProjectGallery, Carousel, Slide, Pagination, Navigation},
     name: 'bankressPartyWorld',
     data() {
         return{
+            slides: [
+                {
+                    id: 1,
+                    image: require(`@/assets/projects/bankress7.jpg`),
+                    style: {
+                        backgroundImage: `url(${require('@/assets/projects/bankress7.jpg')})`,
+
+                    },
+                    text: "Bankress Party World is known for being reliable, creative, and (of course) making great-tasting food for your event!"
+                },
+                {
+                    id: 2,
+                    style: {
+                        backgroundImage: `url(${require('@/assets/projects/slide2.jpg')})`,
+
+                    },
+                    text: "We have a large number of staffs and material resources to cater for large events"
+                },
+            ],
             cards:[
                 {
                     header: 'our menu',
@@ -96,18 +135,14 @@ export default {
 
 
 <style  scoped>
-.scrollpara{
+.parallax{
     position: relative;
     top: 0;
-    /* padding-top: 70px; */
-    z-index: -1;
+    width: 100%;
 }
-.scrollpara > .parallax{
-    position: relative;
-    top: 0;
-}
+
+
 .bgImage{
-    background-image: url('../assets/projects/bankress7.jpg');
     background-color: #f8f7f7;
     background-size: cover;
     background-position: center ;
