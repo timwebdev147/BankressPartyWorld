@@ -1,9 +1,9 @@
 
 <template>
     <div class="top-panel-title">
-        <h1>Projects</h1>
+        <h1>Pictures From Recent Parties</h1>
         <span>
-            <router-link to="/">Home</router-link> > Projects
+            <router-link to="/">Home</router-link> > recent parties
         </span>
 
     </div>

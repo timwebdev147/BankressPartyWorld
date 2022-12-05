@@ -6,7 +6,7 @@
         
         <ul>
             
-            <li v-for="menu in menus" :key="menu.id"> 
+            <li  v-for="menu in menus" :key="menu.id"> 
                 <router-link :to="menu.path" exact>{{menu.menu}} </router-link>
             </li>
         </ul>
@@ -58,10 +58,6 @@ export default {
             type: String,
             default: 'clients',
         },
-        menu5: {
-            type: String,
-            default: 'testimonials',
-        },
         menu6: {
             type: String,
             default: 'contact',
@@ -79,11 +75,6 @@ export default {
                     menu: this.menu1,
                     id: 2,
                     path: '/menu'
-                },
-                {
-                    menu: this.menu5,
-                    id: 6,
-                    path: '/services'
                 },
                 {
                     menu: this.menu2,
@@ -186,21 +177,21 @@ export default {
     .sticky{
         box-shadow: 2px 0px 15px  grey;
         position: fixed;
-        height: 55px;
+        height: 60px;
         transition-duration: 0.5s;
         top: 0;
         z-index: 2000;
     }
     .sticky img{
-        width: 150px;
-        height: 90%;
-        transition: 0.05s;
+        width: 190px;
+        height: 100%;
+        transition: 0.5s;
     }
     nav > img{
         width: 200px;
         height: 100%;
         padding: 0 30px;
-        transition: 0.05s;
+        transition: 0.5s;
     }
     nav > ul{
         display: flex;

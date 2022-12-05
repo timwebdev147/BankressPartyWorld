@@ -1,14 +1,14 @@
 <template>
-    <div class="top-panel-title">
+    <!-- <div class="top-panel-title">
         <h1>Services</h1>
         <span>
             <router-link to="/">Home</router-link> > Services
         </span>
 
-    </div>
+    </div> -->
 
     <div class="services">
-        <h1>Featured Services</h1>
+        <h1>Our Services</h1>
         <hr>
         <div class="cardContainer">
             <div class="card" v-for="service in services" :key="service.id">
@@ -34,19 +34,19 @@ export default {
                     id: 1,
                     title: 'Catering services',
                     image: require(`@/assets/projects/bankress2.jpg`),
-                    text: ''
+                    text: '----'
                 },
                 {
                     id: 2,
                     title: 'Event Management',
                     image: require(`@/assets/bg1.jpg`),
-                    text: ''
+                    text: '----'
                 },
                 {
                     id: 3,
                     title: 'Rentals of Catering Equipment ',
                     image: require(`@/assets/cateringequipment.jpg`),
-                    text: ''
+                    text: '----'
                 }
             ]
         }
@@ -60,7 +60,7 @@ export default {
     background-color: #ffffff;
     width: calc(100% - 10%);
     min-height: 450px;
-    padding: 0 5%;
+    padding: 20px 5%;
     padding-bottom: 0;
 }
 .services > hr{

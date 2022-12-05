@@ -19,10 +19,10 @@ export default {
         scrollPosition: '',
         logo: 'logo.jpg',
         menu1: 'menu',
-        menu2: "projects",
+        menu2: "recent parties",
         menu3: 'about',
         menu4: "contact",
-        menu5: "services"
+        menu5: null
       }
     },
     methods: {

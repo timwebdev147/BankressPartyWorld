@@ -3,9 +3,10 @@ import {createWebHistory, createRouter  } from "vue-router";
 import AboutPage from '@/views/AboutPage.vue';
 import bankress from '@/views/bankressPartyWorld.vue'
 import menu from '@/views/bankressMenu.vue'
-import services from '@/views/bankressServices.vue'
+// import services from '@/views/bankressServices.vue'
 import contact from '@/views/contactUs.vue'
 import allProjects from '@/views/bankressProjects.vue'
+import thankYou from '@/views/ThankYou.vue'
 
 const routes = [
     {
@@ -23,15 +24,22 @@ const routes = [
         name: "home",
         component: bankress,
     },
-    {
-        path: "/services",
-        name: "services",
-        component: services,
-    },
+    // {
+    //     path: "/services",
+    //     name: "services",
+    //     component: services,
+    // },
     {
         path: "/contact",
         name: "contact",
         component: contact,
+        children: [
+            {
+                path: "/contact/thank_you",
+                name: "thankYou",
+                component: thankYou
+            }
+        ]
     },
     {
         path: "/projects",

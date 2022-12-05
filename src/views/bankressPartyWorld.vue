@@ -1,9 +1,9 @@
 <template>
 
-    <carousel :pauseAutoplayOnHover="true" :transition="500" :autoplay="5000" :wrapAround="true" :items-to-show="1">
+    <carousel  :transition="500" :autoplay="20000" :wrapAround="true" :items-to-show="1">
         <slide v-for="slide in slides" :key="slide.id">
             <scroll-parallax class="parallax" :speed="0.40">
-        <div :style="slide.style" class="bgImage">
+        <div :style="slide.style" :class="slide.class" class="bgImage">
             <p>
                 {{slide.text}}
             </p>
@@ -16,9 +16,16 @@
     
     <template #addons>
         <navigation />
-        <pagination />
+        <!-- <pagination /> -->
     </template>
 </carousel>
+
+
+<div>
+    <h1></h1>
+</div>
+<bankress-services/>
+   
     <!-- <div class="scrollpara">
     <scroll-parallax class="parallax" :speed="0.40">
         <div class="bgImage">
@@ -34,17 +41,18 @@
     </div> -->
     
     <div class="section-2">
+        <h1  style=" color: #db4a24;">Catering Services</h1>
         <div class="cardContainer">
             <div class="card" v-for="card in cards" :key="card.id" >
             <div class="cardImage">
                 <img :src="card.image" alt="">
                 <div class="imageOverlay">
-                <router-link :to="card.link" class="btn" href="">read more</router-link>
+                <router-link :to="card.link" class="btn" href="">{{card.btn}}</router-link>
             </div>
             </div>
             <h1>{{card.header}}</h1>
             <p>{{card.text}}</p>
-            <router-link :to="card.link" class="readMore" href="">read more</router-link>
+            <!-- <router-link :to="card.link" class="readMore" href="">read more</router-link> -->
             </div>
         </div>
     </div>
@@ -52,7 +60,7 @@
     <div class="projectSection">
         <div style="width: 300px;">
             <p>GALLERY</p>
-            <h1>Check our recent projects</h1>
+            <h1>Check our recent parties</h1>
             <hr style="width: 100px;"/>
         </div>
         <ProjectGallery/>
@@ -71,12 +79,12 @@
 </template>
 
 <script>
-// import navBar from '../components/navBar.vue'
+import bankressServices from '../views/bankressServices.vue'
 import 'vue3-carousel/dist/carousel.css'
-import { Carousel, Slide, Pagination, Navigation } from 'vue3-carousel'
+import { Carousel, Slide,  Navigation } from 'vue3-carousel'
 import ProjectGallery from '../components/projectGallery.vue'
 export default {
-  components: { ProjectGallery, Carousel, Slide, Pagination, Navigation},
+  components: { ProjectGallery, Carousel, Slide ,bankressServices,  Navigation},
     name: 'bankressPartyWorld',
     data() {
         return{
@@ -88,7 +96,7 @@ export default {
                         backgroundImage: `url(${require('@/assets/projects/bankress7.jpg')})`,
 
                     },
-                    text: "Bankress Party World is known for being reliable, creative, and (of course) making great-tasting food for your event!"
+                    text: "Bankress Party World is well known for it's RELIABILITY, CREATIVITY,  and EFFICIENCY (Effizy). We are highly distinguished with specially prepared tasty  foods from our modern tastily furnished kitchen"
                 },
                 {
                     id: 2,
@@ -96,30 +104,42 @@ export default {
                         backgroundImage: `url(${require('@/assets/projects/slide2.jpg')})`,
 
                     },
-                    text: "We have a large number of staffs and material resources to cater for large events"
+                    text: "We have a team of highly trained professional servers and other complimentary staff members with our state of the art equipment second to none in the industry"
                 },
+                {
+                    id: 3,
+                    class: 'third',
+                    style: {
+                        backgroundImage: `url(${require('@/assets/slider3.jpg')})`,
+                        
+                    },
+                    text: "Our reliability in promptness and timely delivery at events is backed up by our sound logistics planning and deployment of resources including project vehicles within our fleet"
+                }
             ],
             cards:[
-                {
-                    header: 'our menu',
-                    text: 'Plan the perfect meals for an upcoming event',
-                    image: require(`@/assets/card1.jpg`),
-                    id: 1,
-                    link: '/menu'
-                },
-                {
-                    header: 'Events & Private Parties',
-                    text: "Our full-service events can be easily customized to match your taste and vision. From the flavors of your cuisine to the branding of your menu items—anything is possible. Our expert coordinators, planners and servers consider every detail to make your event unforgettable.",
-                    image: require(`@/assets/projects/bankress8.jpg`),
-                    id: 2,
-                    link: ''
-                },
                 {
                     header: 'Catering',
                     text: 'We cater for large parties, both corprate organizations and private individuals.',
                     image: require(`@/assets/projects/bankress11.jpg`),
                     id: 4,
-                    link: '/projects'
+                    link: '/projects',
+                    btn: 'check previous parties'
+                },
+                {
+                    header: 'Table settings',
+                    text: "Our Service is customizable to match your taste and vision. From the flavors of your cuisine to the branding of your menu items—anything is possible. Our expert coordinators, planners and servers consider every detail to make your event unforgettable.",
+                    image: require(`@/assets/projects/bankress8.jpg`),
+                    id: 2,
+                    link: '/about',
+                    btn: 'check About us'
+                },
+                {
+                    header: 'menu cards',
+                    text: 'A view into menu cards for some of our recent parties',
+                    image: require(`@/assets/projects/bankress13.jpg`),
+                    id: 1,
+                    link: '/menu',
+                    btn: 'check previous menu'
                 },
             ],
             
@@ -135,10 +155,18 @@ export default {
 
 
 <style  scoped>
+
+.carousel__slide{
+    outline: none;
+}
 .parallax{
     position: relative;
     top: 0;
     width: 100%;
+    outline: none;
+}
+.header{
+    padding: 50px
 }
 
 
@@ -155,13 +183,19 @@ export default {
     height: 80vh;
 }
 .bgImage p{
-    font-size: 40px;
+    font-size: 30px;
     /* font-weight: bolder; */
+    position: relative;
+    z-index: 1;
     color: white;
     text-align: center;
     text-shadow: 2px 2px 4px grey;
 
-    width: 60%;
+    width: 80%;
+}
+.third {
+    /* color: black; */
+    background-size: 100% 100%;
 }
 .bgImage .overlay{
     position: absolute;
@@ -170,7 +204,10 @@ export default {
     justify-content: center;
     align-items: flex-end;
     width: 100%;
-    height: 40%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 0;
+    outline: none;
     /* background-image: linear-gradient( #06080aa9, transparent ); */
 }
 .overlay .btn{
@@ -187,9 +224,9 @@ export default {
     }
 .section-2{
     background-color: #ffffff;
-    width: calc(100% - 20%);
+    width: calc(100% - 10%);
     min-height: 450px;
-    padding: 50px 10%;
+    padding: 50px 5%;
     padding-bottom: 0;
 }
 .section-2  p{
@@ -316,19 +353,23 @@ export default {
 @media (max-width: 600px) {
     .bgImage{
     background-image: url('../assets/projects/bankress7.jpg');
-    background-size: 100% 100%;
+    background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 40vh;
+    height: 50vh;
+}
+.third{
+    background-size: cover;
 }
 .bgImage p{
-    font-size: 25px;
+    font-size: large;
     /* font-family: cursive; */
     font-weight: bolder;
+    line-height: 1.5;
     text-align: center;
     text-shadow: 2px 2px 4px grey;
     width: 90%;
@@ -338,9 +379,9 @@ export default {
 }
 .section-2{
     background-color: #fff;
-    width: calc(100% - 20%);
+    width: calc(100% - 10%);
     min-height: 500px;
-    padding: 50px 10%;
+    padding: 50px 5%;
     padding-bottom: 0;
 }
 .section-2 p{
@@ -351,7 +392,8 @@ export default {
 .cardContainer > .card{
     width: 100%;
     padding-bottom: 10px;
-    min-height: 450px;
+    /* border: 2px solid black; */
+    height: max-content;
     display: flex;
     flex-direction: column;
 }

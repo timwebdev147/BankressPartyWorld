@@ -71,7 +71,7 @@ export default {
         },
         address: {
             type: String,
-            default: '40 Randle avenue, surulere, Lagos ',
+            default: '40 Randle Avenue, Surulere, Lagos ',
         },
         phoneNumber: {
             type: String,

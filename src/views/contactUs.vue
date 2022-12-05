@@ -1,4 +1,5 @@
 <template>
+    <router-view></router-view>
     <div class="top-panel-title">
         <h1>Contact Us</h1>
         
@@ -6,6 +7,9 @@
             <router-link to="/">Home</router-link> > Contact Us
         </span>
     </div>
+    <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3964.117803167824!2d3.3545331139142536!3d6.50676922516489!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103b8c3f1c3fb323%3A0x44a77cceaf971054!2s40%20Randle%20Ave%2C%20Surulere%20101241%2C%20Lagos!5e0!3m2!1sen!2sng!4v1670252439578!5m2!1sen!2sng" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <!-- <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3964.6916525835195!2d3.416270213914032!3d6.433639225988467!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103b8ad35f7e93e9%3A0xed985b3c7e02529a!2s14%20Adeleke%20Adedoyin%20St%2C%20Victoria%20Island%20106104%2C%20Lagos!5e0!3m2!1sen!2sng!4v1669931724080!5m2!1sen!2sng" style="border: 0" width="600" height="450"  allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe> -->
+
     <section class="contact-page">
         <p>
             Please use the form below to send us a message.<span class="largeScreen"><br/>  Or simply gives us a call on any of the phone numbers below.</span> <br/> Thanks for your interest!
@@ -35,14 +39,14 @@
                 </div>
             </div>
             <div class="contact-form">
-                <form action="">
+                <form action="https://bankress-mailer.vercel.app/" method="POST">
                     <div v-for="field in form" :key="field.id">
                         <label for="">{{field.label}}<b> *</b></label>
-                        <input :value="field.value" v-if="field.tag == 'input' " :type="field.type">
-                        <textarea :value="field.value" v-if="field.tag == 'textarea'" :type="field.type"></textarea>
+                        <input :name="field.name" :value="field.value" v-if="field.tag == 'input' " :type="field.type">
+                        <textarea :name="field.name"  :value="field.value" v-if="field.tag == 'textarea'" :type="field.type"></textarea>
                     </div>
                     <div class="submit-container">
-                        <button class="submit" type="submit">Submit</button>
+                        <button class="submit" name="submit" type="submit">Submit</button>
                     </div>
                 </form>
             </div>
@@ -64,6 +68,7 @@ export default {
                 {
                     label: "Name",
                     type: 'text',
+                    name: 'fullname',
                     tag: 'input',
                     value: '',
                     id: 1
@@ -71,6 +76,7 @@ export default {
                 {
                     label: "Phone",
                     type: 'text',
+                    name: 'number',
                     tag: 'input',
                     value: '',
                     id: 2
@@ -78,6 +84,7 @@ export default {
                 {
                     label: "Email",
                     type: 'email',
+                    name: 'email',
                     tag: 'input',
                     value: '',
                     id: 3
@@ -86,6 +93,7 @@ export default {
                     label: "Message",
                     type: 'text',
                     tag: 'textarea',
+                    name: 'message',
                     value: '',
                     id: 4
                 }
@@ -96,6 +104,12 @@ export default {
 </script>
 
 <style scoped>
+
+.map{
+    width: calc(100% - 40px);
+    padding: 20px;
+    height: 500px;
+}
 .contact-page{
     padding: 0 10%;
     padding-bottom: 100px;
