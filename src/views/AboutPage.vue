@@ -9,7 +9,7 @@
     <section class="aboutPage">
 
         <div class="about">
-            <div><img  src="../assets/projects/bankress14.jpg" alt=""></div>
+            <div><img  src="../assets/portfolio/office.jpg" alt=""></div>
             <p><span class="text-center"><p><b>BANKRESS PARTY WORLD</b><br/></p></span> is a fast growing business concern in the entertainment/hospitality industry in lagos nigeria.  Our business outfit is statutorily registered with the Cooperate Affairs Commision(CAC) as an indoor and outdoor catering service outfit.<br/>
             <span><P><b>BANKRESS PARTY WORLD</b></P></span> was established and started operations in april 2000, taking care of small parties. However, consistent with the organization's vision of customer satisfaction through delivery of good quality services over the years, the job scope of the organization increased immensely alongside with increased human capacity and material resources.
             <br/>The company has transformed and is in better position to cater for large parties, both corprate organizations and private individuals.</p>
@@ -42,6 +42,7 @@ export default {
 }
 .about img {
     border-radius: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.4);
     height: 200px;
     width: 200px;
 }

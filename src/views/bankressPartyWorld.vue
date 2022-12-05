@@ -235,7 +235,7 @@ export default {
 }
 .cardContainer{
     display: flex;
-    justify-content: space-evenly;
+    justify-content: flex-start;
     min-height: 1100px;
     width: 100%;
     flex-wrap: wrap;
@@ -245,6 +245,7 @@ export default {
 .cardContainer > .card{
     width: 45%;
     min-height: 400px;
+    margin-right: 5%; 
     display: flex;
     flex-direction: column;
 }

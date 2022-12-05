@@ -47,6 +47,12 @@ export default {
                     title: 'Rentals of Catering Equipment ',
                     image: require(`@/assets/cateringequipment.jpg`),
                     text: '----'
+                },
+                {
+                    id: 4,
+                    title: 'Bankress Foods (foodstuffs)',
+                    image: require(`@/assets/cateringequipment.jpg`),
+                    text: '----'
                 }
             ]
         }
@@ -70,7 +76,7 @@ export default {
 }
 .cardContainer{
     display: flex;
-    justify-content: space-evenly;
+    justify-content: flex-start;
     min-height: 100px;
     width: 100%;
     flex-wrap: wrap;
@@ -79,6 +85,7 @@ export default {
 .cardContainer > .card{
     width: 30%;
     min-height: 450px;
+    margin-right: 3.3%;
     display: flex;
     flex-direction: column;
 }
@@ -127,10 +134,7 @@ export default {
     justify-content: center;
     background-color: rgba(0, 0, 0, 0.4);
 }
-.cardContainer{
-    display: flex;
-    justify-content: space-evenly;
-}
+
 </style>
 
 <style scoped>
