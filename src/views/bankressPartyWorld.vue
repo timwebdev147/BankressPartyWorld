@@ -65,7 +65,7 @@
         </div>
         <ProjectGallery/>
 
-        <div class="fadeEffect">
+        <div class="">
             <div class="layerOne"></div>
             <div class="layerTwo"></div>
         </div>
@@ -205,7 +205,7 @@ export default {
     align-items: flex-end;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: rgba(0, 0, 0, 0.2);
     z-index: 0;
     outline: none;
     /* background-image: linear-gradient( #06080aa9, transparent ); */
@@ -227,7 +227,7 @@ export default {
     width: calc(100% - 10%);
     min-height: 450px;
     padding: 50px 5%;
-    padding-bottom: 0;
+    /* padding-bottom: 0; */
 }
 .section-2  p{
     text-align: justify;
@@ -236,16 +236,17 @@ export default {
 .cardContainer{
     display: flex;
     justify-content: flex-start;
-    min-height: 1100px;
+    max-height: 1100px;
     width: 100%;
     flex-wrap: wrap;
     padding-top: 50px;
 }
 
 .cardContainer > .card{
-    width: 45%;
+    width: 30%;
     min-height: 400px;
-    margin-right: 5%; 
+    margin-right: 3%; 
+    box-sizing: border-box;
     display: flex;
     flex-direction: column;
 }
@@ -267,9 +268,10 @@ export default {
     text-decoration: none;
     text-decoration-line: underline;
     color: #db4a24;
+    cursor: pointer;
 }
 .card > .cardImage{
-    height: 50%;
+    height: 300px;
     position: relative;
 }
 .cardImage img{
@@ -381,7 +383,7 @@ export default {
 .section-2{
     background-color: #fff;
     width: calc(100% - 10%);
-    min-height: 500px;
+    height: 1500px;
     padding: 50px 5%;
     padding-bottom: 0;
 }
@@ -390,6 +392,7 @@ export default {
     font-size: 15px;
     padding: 10px 0;
 }
+
 .cardContainer > .card{
     width: 100%;
     padding-bottom: 10px;

@@ -14,18 +14,23 @@
             <div class="card" v-for="service in services" :key="service.id">
                 <img :src="service.image" alt="">
                 <h1>{{service.title}}</h1>
-                <p>{{service.text}}</p>
-                <router-link to="#" class="readMore">
+                <p>
+
+                    <text-clamp :text='service.text' :expanded="service.expand"  :max-lines="4" />
+                </p>
+                <a  @click="expand(service)"  class="readMore">
                     Read More
-                </router-link>
+                </a>
             </div>
         </div>
     </div>
 </template>
 
 <script>
+import textClamp from 'vue3-text-clamp'
 export default {
     name: 'bankressServices',
+    components: {textClamp},
 
     data() {
         return{
@@ -34,7 +39,7 @@ export default {
                     id: 1,
                     title: 'Catering services',
                     image: require(`@/assets/projects/bankress2.jpg`),
-                    text: '----'
+                    text: 'We are highly rated first among equal in the catering/hospitality business industry in Nigeria, with notable list of clientele who have rave reviews of not only our exquisite range of both local and inter-continental dishes led by our team head/CEO who is an internationally trained culinary master, but also our excellent professional services. At bankress we add glamour to yur events like no other.'
                 },
                 {
                     id: 2,
@@ -46,15 +51,21 @@ export default {
                     id: 3,
                     title: 'Rentals of Catering Equipment ',
                     image: require(`@/assets/cateringequipment.jpg`),
-                    text: '----'
+                    text: 'We have for rentals exclusive and premium party equipments and accessories such as Rolltops( gold and silver ), Cutlery set( spoons, fork and knives in gold and silver), Hot plate, Glass cups(water, wine and champagne), Napkins, various exclusive plates, Decorative rings...e.t.c \n Kitchen Equipments like Cooking pots, Gas burner e.t.c'
                 },
                 {
                     id: 4,
                     title: 'Bankress Foods (foodstuffs)',
                     image: require(`@/assets/cateringequipment.jpg`),
-                    text: '----'
+                    text: 'Raw and proccessed food exports (This service will be available soon)'
                 }
             ]
+        }
+    },
+
+    methods: {
+        expand(service){
+            service.expand = true;
         }
     }
     
@@ -107,6 +118,7 @@ export default {
     text-decoration: none;
     text-decoration-line: underline;
     color: #db4a24;
+    cursor: pointer;
 }
 /* .card > img{
     height: 50%;
